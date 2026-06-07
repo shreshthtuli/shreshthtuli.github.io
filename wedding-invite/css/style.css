@@ -198,21 +198,18 @@ img { max-width: 100%; display: block; }
   z-index: -1;
 }
 .hero__inner { padding: 120px 24px 60px; max-width: 900px; }
-.hero__ganesha {
+.hero__monogram { margin: 0; line-height: 0; }
+.hero__art {
   display: block;
-  width: clamp(60px, 9.5vw, 85px);
+  width: clamp(290px, 64vw, 560px);
   height: auto;
-  margin: 0 auto 16px;
-  animation: ganeshaFloat 4.5s ease-in-out infinite,
-             ganeshaGlow 3s ease-in-out infinite;
+  margin: 0 auto 8px;
+  filter: drop-shadow(0 8px 26px rgba(201, 162, 63, 0.30));
+  animation: ganeshaFloat 5.5s ease-in-out infinite;
 }
 @keyframes ganeshaFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
-}
-@keyframes ganeshaGlow {
-  0%, 100% { filter: drop-shadow(0 4px 14px rgba(201, 162, 63, 0.35)) brightness(1); }
-  50% { filter: drop-shadow(0 6px 22px rgba(231, 205, 134, 0.6)) brightness(1.08); }
+  50% { transform: translateY(-8px); }
 }
 .hero__eyebrow {
   text-transform: uppercase;
@@ -760,6 +757,6 @@ img { max-width: 100%; display: block; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero__ganesha { animation: none; }
+  .hero__art { animation: none; }
   * { scroll-behavior: auto; }
 }
