@@ -200,15 +200,19 @@ img { max-width: 100%; display: block; }
 .hero__inner { padding: 120px 24px 60px; max-width: 900px; }
 .hero__ganesha {
   display: block;
-  width: clamp(110px, 18vw, 160px);
+  width: clamp(120px, 19vw, 170px);
   height: auto;
-  margin: 0 auto 14px;
-  filter: drop-shadow(0 6px 18px rgba(201, 162, 63, 0.45));
-  animation: ganeshaFloat 4.5s ease-in-out infinite;
+  margin: 0 auto 16px;
+  animation: ganeshaFloat 4.5s ease-in-out infinite,
+             ganeshaGlow 3s ease-in-out infinite;
 }
 @keyframes ganeshaFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-7px); }
+}
+@keyframes ganeshaGlow {
+  0%, 100% { filter: drop-shadow(0 4px 14px rgba(201, 162, 63, 0.35)) brightness(1); }
+  50% { filter: drop-shadow(0 6px 22px rgba(231, 205, 134, 0.6)) brightness(1.08); }
 }
 .hero__eyebrow {
   text-transform: uppercase;
