@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreshth & Disha are getting married</title>
+  <meta name="description" content="With the blessings of our elders, join us for the wedding celebrations of Shreshth & Disha. 2–7 July 2026 · WelcomHotel by ITC Hotels, Dwarka, Delhi & Coral Telecom, Noida." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shreshth & Disha are getting married" />
+  <meta property="og:description" content="With the blessings of our elders, join us across our days of celebration. 2–7 July 2026 · Delhi & Noida." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Pinyon+Script&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Background music (light Indian / shehnai) ===== -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="https://archive.org/download/dni.ncaa.SPK-35-SP/SPK-35-SP_SIDE_A.mp3" type="audio/mpeg" />
+  </audio>
+  <button class="music-toggle" id="musicToggle" aria-label="Play wedding music" aria-pressed="false">
+    <span class="music-toggle__bars" aria-hidden="true">
+      <i></i><i></i><i></i><i></i>
+    </span>
+    <span class="music-toggle__label">Play music</span>
+  </button>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__brand">S <span>&amp;</span> D</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#invite">Invitation</a>
+      <a href="#events">Events</a>
+      <a href="#venue" class="nav__cta">Venue</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__veil"></div>
+    <div class="hero__inner reveal">
+      <p class="hero__eyebrow">Together with their families</p>
+      <h1 class="hero__names">
+        <span class="hero__name">Shreshth</span>
+        <span class="hero__amp">&amp;</span>
+        <span class="hero__name">Disha</span>
+      </h1>
+      <p class="hero__sub">are getting married</p>
+      <div class="hero__date">
+        <span>A celebration across</span>
+        <strong>02 – 07 . 07 . 2026</strong>
+        <span>WelcomHotel by ITC Hotels, Dwarka, Delhi</span>
+      </div>
+      <a href="#invite" class="btn btn--gold">See Invitation</a>
+    </div>
+    <div class="hero__scroll">scroll<span></span></div>
+  </section>
+
+  <!-- ===== Invitation ===== -->
+  <section class="section invite" id="invite">
+    <div class="invite__card reveal">
+      <p class="invite__kicker">Wedding Invitation</p>
+      <p class="invite__bless">With the blessings of our revered ancestors and immense joy in our hearts,</p>
+      <p class="invite__hosts">Smt. Sarla Tuli &amp; Late Shri Krishan Dev Tuli</p>
+      <p class="invite__line">seek the honour of your gracious presence at the wedding celebrations of their beloved grandson</p>
+      <h3 class="invite__name">Shreshth</h3>
+      <p class="invite__parents">Son of Mrs. Poonam Tuli &amp; Mr. Rajesh Tuli</p>
+      <p class="invite__with">with</p>
+      <h3 class="invite__name">Disha</h3>
+      <p class="invite__parents">Daughter of Mrs. Reena Nangia &amp; Mr. Sanjay Nangia</p>
+      <span class="invite__divider">&#10086;</span>
+      <p class="invite__body">Over three auspicious days — the 2<sup>nd</sup>, 3<sup>rd</sup> and 4<sup>th</sup> of July — we shall invoke the Divine in all its sacred forms and celebrate this blessed union through the timeless rituals, vibrant colours, music and rich cultural traditions of India.</p>
+      <p class="invite__body">Each celebration will reflect the distinctive customs and flavours of our country, coming together in prayer to bless <strong>Shreshth &amp; Disha</strong> with a lifetime of love, harmony and companionship.</p>
+    </div>
+  </section>
+
+  <!-- ===== Countdown ===== -->
+  <section class="count" id="countdown">
+    <h2 class="count__title">Counting down to forever</h2>
+    <div class="count__grid" id="countdownGrid">
+      <div class="count__cell"><span id="cd-days">00</span><label>Days</label></div>
+      <div class="count__cell"><span id="cd-hours">00</span><label>Hours</label></div>
+      <div class="count__cell"><span id="cd-mins">00</span><label>Minutes</label></div>
+      <div class="count__cell"><span id="cd-secs">00</span><label>Seconds</label></div>
+    </div>
+  </section>
+
+  <!-- ===== Events / Ceremonies ===== -->
+  <section class="section events" id="events">
+    <div class="section__head reveal">
+      <p class="kicker">The order of celebrations</p>
+      <h2 class="heading">The Celebrations</h2>
+    </div>
+    <div class="schedule">
+
+      <!-- Day 1 -->
+      <article class="day reveal">
+        <div class="day__head">
+          <span class="day__date">Thursday · 2 July 2026 · 7:00 PM</span>
+          <h3 class="day__title">शुभारम्भ <em>Shubhaarambh</em></h3>
+          <p class="day__meta">Gateway 2 &amp; 3, WelcomHotel by ITC Hotels, Dwarka</p>
+        </div>
+        <ul class="ceremony-list">
+          <li class="ceremony">
+            <span class="ceremony__icon">&#128367;</span>
+            <div>
+              <h4>Ganesh Vandan</h4>
+              <p>We begin by invoking Lord Ganesha, the remover of obstacles, to bless every beginning.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#127804;</span>
+            <div>
+              <h4>Shagun &amp; Tilak</h4>
+              <p>The traditional ceremonies to honour Shreshth, amidst the regal colours and soulful folklore of Rajasthan.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#129533;</span>
+            <div>
+              <h4>Chunni Ceremony</h4>
+              <p>A graceful welcome of our beloved Disha into our family, with affection and blessings.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#129345;</span>
+            <div>
+              <h4>Tappas &amp; Dhol</h4>
+              <p>The evening comes alive with spirited Punjabi rhythm — joy, rhythm and togetherness, so integral to married life.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#127925;</span>
+            <div>
+              <h4>Sangeet &amp; Dance</h4>
+              <p>A night of music, choreographed performances and dancing as both families come together in celebration.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Day 2 — the wedding -->
+      <article class="day day--main reveal">
+        <div class="day__head">
+          <span class="day__date">Friday · 3 July 2026 · 5:30 PM</span>
+          <h3 class="day__title">शुभ विवाह <em>Shubh Vivah</em></h3>
+          <p class="day__meta">Suryamahal, WelcomHotel by ITC Hotels, Dwarka</p>
+        </div>
+        <ul class="ceremony-list">
+          <li class="ceremony">
+            <span class="ceremony__icon">&#128052;</span>
+            <div>
+              <h4>Baraat · 5:30 PM</h4>
+              <p>The most auspicious day begins with the groom's joyful procession.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#128081;</span>
+            <div>
+              <h4>Panigrahan Sanskar · 7:30 PM</h4>
+              <p>A sacred, lifelong union — Shreshth's commitment to protect and ensure the happiness and dignity of Disha as his wife, for this life and beyond.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#129785;</span>
+            <div>
+              <h4>Kanyadaan · 8:00 PM</h4>
+              <p>Entrusting the sacred trust — Sanjay ji &amp; Reena ji bless the groom to uphold Indian traditions and support the bride for the next seven lives. The groom accepts with respect &amp; samarpan.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#128293;</span>
+            <div>
+              <h4>Saat Pheras</h4>
+              <p>Seven vows of duty, devotion &amp; togetherness around the sacred fire — a pledge that Dharma, love and mutual respect shall guide every step of their journey.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#128144;</span>
+            <div>
+              <h4>Vidaai · 11:00 PM</h4>
+              <p>With love, blessings &amp; farewell, the couple step into Grihastha Ashram — walking together as equal companions in Dharma, prosperity, family and spiritual growth.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Day 3 -->
+      <article class="day reveal">
+        <div class="day__head">
+          <span class="day__date">Saturday · 4 July 2026</span>
+          <h3 class="day__title">नवजीवन अभिनन्दन <em>Navjeevan Abhinandan</em></h3>
+          <p class="day__meta">Gateway 2 &amp; 3, WelcomHotel by ITC Hotels, Dwarka</p>
+        </div>
+        <ul class="ceremony-list">
+          <li class="ceremony">
+            <span class="ceremony__icon">&#128144;</span>
+            <div>
+              <h4>Phera Ceremony · 12 Noon</h4>
+              <p>Join us to bless the newlyweds as they lovingly return to Disha's Mayaka for the traditional Phera ceremony.</p>
+            </div>
+          </li>
+          <li class="ceremony">
+            <span class="ceremony__icon">&#127870;</span>
+            <div>
+              <h4>Wedding Reception · 7:00 PM</h4>
+              <p>An elegant reception bringing families and friends together to welcome the couple, now pronounced husband and wife.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Day 4 -->
+      <article class="day reveal">
+        <div class="day__head">
+          <span class="day__date">Monday · 6 July 2026 · 5:00 PM</span>
+          <h3 class="day__title">कर्मभूमि अभिनन्दन <em>Karmabhoomi Abhinandan</em></h3>
+          <p class="day__meta">Coral Telecom, Noida</p>
+        </div>
+        <ul class="ceremony-list">
+          <li class="ceremony">
+            <span class="ceremony__icon">&#10024;</span>
+            <div>
+              <h4>Karmabhoomi Welcome</h4>
+              <p>We welcome and bless the newlyweds at our Karmabhoomi, Coral Telecom, where another cherished family awaits them.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== Venue ===== -->
+  <section class="section venue" id="venue">
+    <div class="section__head reveal">
+      <p class="kicker">Join us at</p>
+      <h2 class="heading">The Venue</h2>
+    </div>
+    <div class="venue__card reveal">
+      <div class="venue__info">
+        <p class="venue__tag">2 – 4 July</p>
+        <h3 class="venue__name">WelcomHotel by ITC Hotels</h3>
+        <p class="venue__addr">District Centre, Sector&nbsp;10, Dwarka, New Delhi 110075</p>
+        <p class="venue__note">All Delhi celebrations are hosted here — Shubhaarambh &amp; Navjeevan Abhinandan at Gateway 2 &amp; 3, and the Shubh Vivah at Suryamahal.</p>
+        <a class="btn btn--gold" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=WelcomHotel+by+ITC+Hotels+Dwarka+New+Delhi">
+          Open in Maps
+        </a>
+      </div>
+      <iframe
+        class="venue__map"
+        title="WelcomHotel by ITC Hotels, Dwarka location map"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=WelcomHotel%20by%20ITC%20Hotels%20Dwarka%20New%20Delhi&output=embed">
+      </iframe>
+    </div>
+
+    <div class="venue__card reveal">
+      <iframe
+        class="venue__map"
+        title="Coral Telecom, Noida location map"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Coral%20Telecom%20Limited%20Noida&output=embed">
+      </iframe>
+      <div class="venue__info">
+        <p class="venue__tag">6 July · Reception</p>
+        <h3 class="venue__name">Karmabhoomi — Coral Telecom</h3>
+        <p class="venue__addr">Coral Telecom Limited, Noida, Uttar Pradesh</p>
+        <p class="venue__note">The Karmabhoomi Abhinandan, where another cherished family awaits to welcome and bless the newlyweds.</p>
+        <a class="btn btn--gold" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Coral+Telecom+Limited+Noida">
+          Open in Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__mono">S <span>&amp;</span> D</div>
+    <p class="footer__names">Shreshth &amp; Disha</p>
+    <p class="footer__tag">2 – 7 July 2026 · Delhi &amp; Noida</p>
+    <p class="footer__thanks">Made with love. We can't wait to celebrate with you.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
