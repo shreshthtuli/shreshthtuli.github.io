@@ -334,6 +334,12 @@ img { max-width: 100%; display: block; }
 }
 .invite__card::before { top: 16px; left: 16px; border-right: none; border-bottom: none; }
 .invite__card::after { bottom: 16px; right: 16px; border-left: none; border-top: none; }
+.invite__ganesha {
+  font-size: 1.15rem;
+  color: var(--maroon);
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
 .invite__kicker {
   text-transform: uppercase;
   letter-spacing: 0.32em;
