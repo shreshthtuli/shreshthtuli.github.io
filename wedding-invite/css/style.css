@@ -198,6 +198,18 @@ img { max-width: 100%; display: block; }
   z-index: -1;
 }
 .hero__inner { padding: 120px 24px 60px; max-width: 900px; }
+.hero__ganesha {
+  display: block;
+  width: clamp(110px, 18vw, 160px);
+  height: auto;
+  margin: 0 auto 14px;
+  filter: drop-shadow(0 6px 18px rgba(201, 162, 63, 0.45));
+  animation: ganeshaFloat 4.5s ease-in-out infinite;
+}
+@keyframes ganeshaFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
 .hero__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.4em;
@@ -334,12 +346,6 @@ img { max-width: 100%; display: block; }
 }
 .invite__card::before { top: 16px; left: 16px; border-right: none; border-bottom: none; }
 .invite__card::after { bottom: 16px; right: 16px; border-left: none; border-top: none; }
-.invite__ganesha {
-  font-size: 1.15rem;
-  color: var(--maroon);
-  letter-spacing: 0.08em;
-  margin-bottom: 14px;
-}
 .invite__kicker {
   text-transform: uppercase;
   letter-spacing: 0.32em;
@@ -742,5 +748,6 @@ img { max-width: 100%; display: block; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
+  .hero__ganesha { animation: none; }
   * { scroll-behavior: auto; }
 }
