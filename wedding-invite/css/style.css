@@ -477,6 +477,14 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   color: var(--gold);
 }
+.day__time {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--maroon);
+  white-space: nowrap;
+}
+.day--main .day__time { color: var(--gold-light); }
 .day__title {
   font-family: var(--display);
   color: var(--maroon);
