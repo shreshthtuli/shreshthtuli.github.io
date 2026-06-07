@@ -200,7 +200,7 @@ img { max-width: 100%; display: block; }
 .hero__inner { padding: 120px 24px 60px; max-width: 900px; }
 .hero__ganesha {
   display: block;
-  width: clamp(120px, 19vw, 170px);
+  width: clamp(60px, 9.5vw, 85px);
   height: auto;
   margin: 0 auto 16px;
   animation: ganeshaFloat 4.5s ease-in-out infinite,
