@@ -498,6 +498,7 @@ img { max-width: 100%; display: block; }
   color: var(--muted);
 }
 .day__meta { font-size: 0.86rem; color: var(--ink); font-weight: 500; }
+.day__hall::after { content: ", "; }
 .ceremony-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
 .ceremony { display: flex; gap: 14px; align-items: flex-start; }
 .ceremony__icon {
@@ -788,6 +789,8 @@ img { max-width: 100%; display: block; }
   .nav__links a { font-size: 1rem; }
 
   .hero__scroll { display: none; }
+  .day__hall, .day__place { display: block; }
+  .day__hall::after { content: ""; }
   .schedule { grid-template-columns: 1fr; }
   .venue__card { grid-template-columns: 1fr; }
   .venue__info { border-left: none; border-top: 3px solid var(--gold); padding: 36px 28px; }
