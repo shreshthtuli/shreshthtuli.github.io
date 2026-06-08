@@ -692,10 +692,11 @@ img { max-width: 100%; display: block; }
   padding: 70px 24px 56px;
 }
 .footer__mono {
-  font-family: var(--display);
-  font-size: 2rem;
+  font-family: var(--script);
+  font-size: 3.4rem;
+  line-height: 1;
   color: var(--gold-light);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
 }
 .footer__mono span { color: var(--gold); }
 .footer__names {
