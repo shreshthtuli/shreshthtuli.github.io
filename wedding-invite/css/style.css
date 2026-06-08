@@ -787,6 +787,7 @@ img { max-width: 100%; display: block; }
   .nav__links.open { transform: translateX(0); }
   .nav__links a { font-size: 1rem; }
 
+  .hero__scroll { display: none; }
   .schedule { grid-template-columns: 1fr; }
   .venue__card { grid-template-columns: 1fr; }
   .venue__info { border-left: none; border-top: 3px solid var(--gold); padding: 36px 28px; }
@@ -797,6 +798,11 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .music-toggle__label { display: none; }
   .music-toggle { padding: 12px; }
+}
+
+/* Hide the scroll cue when the hero is short, to avoid overlapping the button */
+@media (max-height: 780px) {
+  .hero__scroll { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
