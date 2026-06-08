@@ -631,6 +631,13 @@ img { max-width: 100%; display: block; }
   transition: background 0.3s, color 0.3s;
 }
 .rsvp-card__phone:hover { background: var(--gold); color: var(--maroon-deep); }
+.wa-icon {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.22em;
+  margin-right: 0.45em;
+  fill: #25D366;
+}
 .rsvp__form {
   max-width: 680px;
   margin: 0 auto;
