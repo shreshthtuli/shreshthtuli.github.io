@@ -268,23 +268,6 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid rgba(201,162,63,0.4);
   margin: 4px 0;
 }
-.hero__scroll {
-  position: absolute;
-  bottom: 28px; left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.66rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-}
-.hero__scroll span {
-  width: 1px; height: 42px;
-  background: linear-gradient(var(--gold-light), transparent);
-  animation: scrollPulse 2s infinite;
-}
-@keyframes scrollPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
-
 /* ===========================================================
    Countdown
    =========================================================== */
@@ -796,7 +779,6 @@ img { max-width: 100%; display: block; }
   .nav__links.open { transform: translateX(0); }
   .nav__links a { font-size: 1rem; }
 
-  .hero__scroll { display: none; }
   .day__hall, .day__place { display: block; }
   .day__hall::after { content: ""; }
   .schedule { grid-template-columns: 1fr; }
@@ -809,11 +791,6 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .music-toggle__label { display: none; }
   .music-toggle { padding: 12px; }
-}
-
-/* Hide the scroll cue when the hero is short, to avoid overlapping the button */
-@media (max-height: 780px) {
-  .hero__scroll { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
