@@ -586,7 +586,7 @@ img { max-width: 100%; display: block; }
 .rsvp { background: linear-gradient(180deg, var(--ivory), var(--ivory-2)); }
 .rsvp__deadline { color: var(--muted); font-weight: 300; margin-top: 16px; }
 .rsvp__deadline strong { color: var(--maroon); }
-.rsvp__intro { color: var(--muted); font-weight: 300; margin-top: 16px; }
+.rsvp__intro { color: var(--muted); font-weight: 300; margin-top: 46px; }
 .rsvp__contacts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
