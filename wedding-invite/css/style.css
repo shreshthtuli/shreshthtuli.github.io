@@ -134,11 +134,12 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(6px);
 }
 .nav__brand {
-  font-family: var(--display);
-  font-size: 1.5rem;
+  font-family: var(--script);
+  font-size: 2.1rem;
+  line-height: 1;
   color: var(--gold-light);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
 }
 .nav__brand span { color: var(--gold); }
 .nav__links { display: flex; gap: 30px; align-items: center; }
