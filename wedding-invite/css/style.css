@@ -586,6 +586,50 @@ img { max-width: 100%; display: block; }
 .rsvp { background: linear-gradient(180deg, var(--ivory), var(--ivory-2)); }
 .rsvp__deadline { color: var(--muted); font-weight: 300; margin-top: 16px; }
 .rsvp__deadline strong { color: var(--maroon); }
+.rsvp__intro { color: var(--muted); font-weight: 300; margin-top: 16px; }
+.rsvp__contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 26px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.rsvp-card {
+  background: var(--cream-card);
+  border: 1px solid var(--ivory-2);
+  border-top: 3px solid var(--gold);
+  border-radius: 6px;
+  padding: 32px 26px;
+  text-align: center;
+  box-shadow: 0 16px 40px -30px rgba(90, 22, 38, 0.5);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.rsvp-card:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -30px rgba(90, 22, 38, 0.5); }
+.rsvp-card__name {
+  font-family: var(--display);
+  color: var(--maroon);
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+.rsvp-card__rel {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1rem;
+  margin: 2px 0 16px;
+}
+.rsvp-card__phone {
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--maroon);
+  text-decoration: none;
+  padding: 9px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 40px;
+  transition: background 0.3s, color 0.3s;
+}
+.rsvp-card__phone:hover { background: var(--gold); color: var(--maroon-deep); }
 .rsvp__form {
   max-width: 680px;
   margin: 0 auto;
