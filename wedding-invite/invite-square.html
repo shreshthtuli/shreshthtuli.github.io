@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shreshth weds Disha — Invitation & Details (11.75in × 11.75in)</title>
+  <title>Shreshth weds Disha — Invitation & Events (11.75in × 11.75in)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Pinyon+Script&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -78,15 +78,15 @@
       font-size: 14pt; line-height: 1.45;
     }
     .inv__with { color: var(--gold); margin: 0.08in 0; }
-    .inv__hosts { font-family: var(--display); color: var(--maroon); font-size: 16pt; margin: 0.12in 0; }
-    .inv__name { font-family: var(--script); font-size: 42pt; line-height: 1.02; color: var(--maroon); margin-top: 0.06in; }
-    .inv__parents { color: var(--muted); font-weight: 300; font-size: 12pt; }
-    .inv__body { color: var(--ink); font-weight: 300; font-size: 13pt; line-height: 1.55; max-width: 8.4in; margin: 0 auto; }
+    .inv__hosts { font-family: var(--display); color: var(--maroon); font-size: 15pt; margin: 0.1in 0; }
+    .inv__name { font-family: var(--script); font-size: 36pt; line-height: 1.02; color: var(--maroon); margin-top: 0.05in; }
+    .inv__parents { color: var(--muted); font-weight: 300; font-size: 11.5pt; }
+    .inv__body { color: var(--ink); font-weight: 300; font-size: 12.5pt; line-height: 1.5; max-width: 8in; margin: 0 auto; }
 
-    /* Divider between the two sections */
+    /* Divider / section label between the two sections */
     .divider {
-      display: flex; align-items: center; gap: 0.18in;
-      width: 100%; max-width: 7.5in; margin: 0.34in auto 0.3in;
+      display: flex; align-items: center; gap: 0.22in;
+      width: 100%; max-width: 8.2in; margin: 0.3in auto 0.24in;
       color: var(--gold);
     }
     .divider::before, .divider::after {
@@ -94,24 +94,32 @@
       background: linear-gradient(90deg, transparent, var(--gold));
     }
     .divider::after { background: linear-gradient(90deg, var(--gold), transparent); }
-    .divider span { font-size: 13pt; }
+    .divider span {
+      font-family: var(--display);
+      font-size: 14pt;
+      color: var(--maroon);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+    }
 
-    /* Venue */
-    .venues { display: flex; gap: 0.5in; width: 100%; justify-content: center; }
-    .venue { flex: 1; max-width: 4.4in; text-align: center; }
-    .v-tag { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); font-weight: 600; }
-    .v-name { font-family: var(--display); color: var(--maroon); font-size: 14pt; margin: 0.04in 0; }
-    .v-addr { color: var(--muted); font-weight: 300; font-size: 11pt; line-height: 1.4; }
-
-    /* RSVP */
-    .rsvp-h { margin-top: 0.3in; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); font-weight: 600; }
-    .rsvp-grid { display: flex; gap: 0.35in; margin-top: 0.16in; }
-    .rsvp-c { border: 0.8px solid var(--gold); border-radius: 0.16in; padding: 0.18in 0.26in; min-width: 2.5in; }
-    .rsvp-c b { display: block; font-family: var(--display); color: var(--maroon); font-size: 13pt; font-weight: 400; }
-    .rsvp-c span { display: block; font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 10pt; margin: 0.02in 0 0.06in; }
-    .rsvp-c em { font-style: normal; font-weight: 600; color: var(--ink); font-size: 11pt; }
-
-    .closing { font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 12pt; margin-top: 0.26in; }
+    /* Events — two-column grid of days */
+    .days {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.22in 0.5in;
+      width: 100%;
+      text-align: left;
+    }
+    .day__date {
+      text-transform: uppercase; letter-spacing: 0.14em;
+      font-size: 8pt; font-weight: 600; color: var(--gold);
+    }
+    .day__title { font-family: var(--display); color: var(--maroon); font-weight: 400; font-size: 15pt; line-height: 1.15; }
+    .day__title em { font-family: var(--serif); font-style: italic; font-size: 10.5pt; color: var(--muted); margin-left: 0.08in; }
+    .day__venue { font-size: 9pt; color: var(--ink); font-weight: 500; margin: 0.02in 0 0.05in; }
+    .day__list { font-size: 10pt; color: var(--muted); font-weight: 300; line-height: 1.4; }
+    .day__list b { color: var(--maroon); font-weight: 600; }
 
     .toolbar { position: fixed; top: 12px; right: 12px; z-index: 50; }
     .toolbar button {
@@ -153,30 +161,35 @@
       <p class="inv__body">Across four joyous days, we shall invoke the Divine in its many sacred forms and celebrate this blessed union through prayer, tradition, music, colour and the rich cultural heritage of India.</p>
 
       <!-- Divider -->
-      <div class="divider"><span>&#10070;</span></div>
+      <div class="divider"><span>The Celebrations</span></div>
 
-      <!-- Venue & RSVP (page 4) -->
-      <div class="venues">
-        <div class="venue">
-          <p class="v-tag">2 &ndash; 4 July</p>
-          <p class="v-name">WelcomHotel by ITC Hotels</p>
-          <p class="v-addr">District Centre, Sector 10, Dwarka, New Delhi 110075<br>Gateway 2 &amp; 3 &middot; Shubh Vivah at Suryamahal</p>
+      <!-- Events (page 3) -->
+      <div class="days">
+        <div class="day">
+          <span class="day__date">Thursday &middot; 2 July &middot; 7:00 PM</span>
+          <div class="day__title">शुभारम्भ <em>Shubharambh</em></div>
+          <div class="day__venue">Gateway 2 &amp; 3, WelcomHotel by ITC Hotels, Dwarka</div>
+          <div class="day__list">Ganesh Vandan &middot; Shagun &amp; Tilak &middot; Chunni Ceremony &middot; Tappe &amp; Dhol &middot; Sangeet &amp; Dance</div>
         </div>
-        <div class="venue">
-          <p class="v-tag">6 July &middot; Reception</p>
-          <p class="v-name">Coral Telecom — Karmabhoomi</p>
-          <p class="v-addr">Coral Telecom Limited,<br>Noida, Uttar Pradesh</p>
+        <div class="day">
+          <span class="day__date">Friday &middot; 3 July &middot; 5:30 PM</span>
+          <div class="day__title">शुभ विवाह <em>Shubh Vivah</em></div>
+          <div class="day__venue">Suryamahal, WelcomHotel by ITC Hotels, Dwarka</div>
+          <div class="day__list"><b>Baraat</b> 5:30 PM &middot; <b>Panigrahan Sanskar</b> 7:30 PM &middot; <b>Kanyadaan</b> 8:00 PM &middot; Saat Pheras &middot; <b>Vidaai</b> 11:00 PM</div>
+        </div>
+        <div class="day">
+          <span class="day__date">Saturday &middot; 4 July</span>
+          <div class="day__title">नवजीवन अभिनन्दन <em>Navjeevan Abhinandan</em></div>
+          <div class="day__venue">Gateway 2 &amp; 3, WelcomHotel by ITC Hotels, Dwarka</div>
+          <div class="day__list"><b>Pag Phera Send-Off</b> 12 Noon &middot; <b>Wedding Reception</b> 7:00 PM</div>
+        </div>
+        <div class="day">
+          <span class="day__date">Monday &middot; 6 July &middot; 5:00 PM</span>
+          <div class="day__title">कर्मभूमि अभिनन्दन <em>Karmabhoomi Abhinandan</em></div>
+          <div class="day__venue">Coral Telecom, Noida</div>
+          <div class="day__list">Karmabhoomi Welcome &mdash; a warm reception for the newlyweds</div>
         </div>
       </div>
-
-      <p class="rsvp-h">Kindly RSVP</p>
-      <div class="rsvp-grid">
-        <div class="rsvp-c"><b>Rajesh Tuli</b><span>Groom's Father</span><em>+91 98914 99300</em></div>
-        <div class="rsvp-c"><b>Rakesh Tuli</b><span>Groom's Tayaji</span><em>+91 99150 35511</em></div>
-        <div class="rsvp-c"><b>Shyam Gupta</b><span>Groom's Jiju</span><em>+91 98999 84791</em></div>
-      </div>
-
-      <p class="closing">We are excited to celebrate with you.</p>
     </div>
   </section>
 </body>
