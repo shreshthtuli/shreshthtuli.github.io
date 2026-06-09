@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreshth weds Disha — Invitation & Details (11.75in × 11.75in)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Pinyon+Script&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --maroon: #5a1626;
+      --gold: #c9a23f;
+      --gold-light: #e7cd86;
+      --ivory: #fbf6ec;
+      --ivory-2: #f3ead9;
+      --cream: #fffdf8;
+      --ink: #2b2118;
+      --muted: #7a6a55;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --display: "Marcellus", serif;
+      --script: "Pinyon Script", cursive;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: "Mukta", system-ui, sans-serif;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page { size: 11.75in 11.75in; margin: 0; }
+
+    .page {
+      width: 11.75in;
+      height: 11.75in;
+      position: relative;
+      overflow: hidden;
+      background: var(--ivory);
+    }
+    .frame {
+      position: absolute;
+      inset: 0.5in;
+      border: 1.6px solid var(--gold);
+      border-radius: 3px;
+      pointer-events: none;
+    }
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 0.12in;
+      border: 0.7px solid rgba(201, 162, 63, 0.5);
+      border-radius: 2px;
+    }
+    .content {
+      position: absolute;
+      inset: 0.95in;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.34em;
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .ganesha-line { font-size: 13pt; color: var(--maroon); letter-spacing: 0.04em; margin-bottom: 0.12in; }
+    .rule { width: 1.7in; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0.16in auto; }
+    .flourish { color: var(--gold); font-size: 14pt; margin: 0.14in 0; }
+
+    /* Invitation */
+    .inv__bless, .inv__line, .inv__with {
+      font-family: var(--serif); font-style: italic; color: var(--muted);
+      font-size: 14pt; line-height: 1.45;
+    }
+    .inv__with { color: var(--gold); margin: 0.08in 0; }
+    .inv__hosts { font-family: var(--display); color: var(--maroon); font-size: 16pt; margin: 0.12in 0; }
+    .inv__name { font-family: var(--script); font-size: 42pt; line-height: 1.02; color: var(--maroon); margin-top: 0.06in; }
+    .inv__parents { color: var(--muted); font-weight: 300; font-size: 12pt; }
+    .inv__body { color: var(--ink); font-weight: 300; font-size: 13pt; line-height: 1.55; max-width: 8.4in; margin: 0 auto; }
+
+    /* Divider between the two sections */
+    .divider {
+      display: flex; align-items: center; gap: 0.18in;
+      width: 100%; max-width: 7.5in; margin: 0.34in auto 0.3in;
+      color: var(--gold);
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .divider::after { background: linear-gradient(90deg, var(--gold), transparent); }
+    .divider span { font-size: 13pt; }
+
+    /* Venue */
+    .venues { display: flex; gap: 0.5in; width: 100%; justify-content: center; }
+    .venue { flex: 1; max-width: 4.4in; text-align: center; }
+    .v-tag { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); font-weight: 600; }
+    .v-name { font-family: var(--display); color: var(--maroon); font-size: 14pt; margin: 0.04in 0; }
+    .v-addr { color: var(--muted); font-weight: 300; font-size: 11pt; line-height: 1.4; }
+
+    /* RSVP */
+    .rsvp-h { margin-top: 0.3in; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold); font-weight: 600; }
+    .rsvp-grid { display: flex; gap: 0.35in; margin-top: 0.16in; }
+    .rsvp-c { border: 0.8px solid var(--gold); border-radius: 0.16in; padding: 0.18in 0.26in; min-width: 2.5in; }
+    .rsvp-c b { display: block; font-family: var(--display); color: var(--maroon); font-size: 13pt; font-weight: 400; }
+    .rsvp-c span { display: block; font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 10pt; margin: 0.02in 0 0.06in; }
+    .rsvp-c em { font-style: normal; font-weight: 600; color: var(--ink); font-size: 11pt; }
+
+    .closing { font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 12pt; margin-top: 0.26in; }
+
+    .toolbar { position: fixed; top: 12px; right: 12px; z-index: 50; }
+    .toolbar button {
+      font-family: "Mukta", sans-serif; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      font-size: 11px; padding: 10px 18px; border: none; border-radius: 4px;
+      background: var(--maroon); color: var(--gold-light); cursor: pointer;
+      box-shadow: 0 6px 18px -8px rgba(0,0,0,0.5);
+    }
+    @media screen {
+      body { background: #2c2c2c; padding: 24px; display: flex; justify-content: center; }
+      .page { box-shadow: 0 12px 50px rgba(0,0,0,0.5); }
+    }
+    @media print {
+      .toolbar { display: none; }
+      body { background: none; padding: 0; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><button onclick="window.print()">Print / Save PDF</button></div>
+
+  <section class="page">
+    <div class="frame"></div>
+    <div class="content">
+      <!-- Invitation (page 2) -->
+      <p class="ganesha-line">॥ श्री गणेशाय नमः ॥</p>
+      <p class="kicker">Wedding Invitation</p>
+      <div class="rule"></div>
+      <p class="inv__bless">With the blessings of our revered ancestors and immense joy in our hearts,</p>
+      <p class="inv__hosts">Smt. Sarla Tuli &amp; Late Shri Krishan Dev Tuli</p>
+      <p class="inv__line">seek the honour of your gracious presence at the wedding celebrations of their beloved grandson</p>
+      <h2 class="inv__name">Shreshth</h2>
+      <p class="inv__parents">Son of Mrs. Poonam Tuli &amp; Mr. Rajesh Tuli</p>
+      <p class="inv__with">with</p>
+      <h2 class="inv__name">Disha</h2>
+      <p class="inv__parents">Daughter of Mrs. Reena Nangia &amp; Mr. Sanjay Vir Nangia</p>
+      <div class="flourish">&#10086;</div>
+      <p class="inv__body">Across four joyous days, we shall invoke the Divine in its many sacred forms and celebrate this blessed union through prayer, tradition, music, colour and the rich cultural heritage of India.</p>
+
+      <!-- Divider -->
+      <div class="divider"><span>&#10070;</span></div>
+
+      <!-- Venue & RSVP (page 4) -->
+      <div class="venues">
+        <div class="venue">
+          <p class="v-tag">2 &ndash; 4 July</p>
+          <p class="v-name">WelcomHotel by ITC Hotels</p>
+          <p class="v-addr">District Centre, Sector 10, Dwarka, New Delhi 110075<br>Gateway 2 &amp; 3 &middot; Shubh Vivah at Suryamahal</p>
+        </div>
+        <div class="venue">
+          <p class="v-tag">6 July &middot; Reception</p>
+          <p class="v-name">Coral Telecom — Karmabhoomi</p>
+          <p class="v-addr">Coral Telecom Limited,<br>Noida, Uttar Pradesh</p>
+        </div>
+      </div>
+
+      <p class="rsvp-h">Kindly RSVP</p>
+      <div class="rsvp-grid">
+        <div class="rsvp-c"><b>Rajesh Tuli</b><span>Groom's Father</span><em>+91 98914 99300</em></div>
+        <div class="rsvp-c"><b>Rakesh Tuli</b><span>Groom's Tayaji</span><em>+91 99150 35511</em></div>
+        <div class="rsvp-c"><b>Shyam Gupta</b><span>Groom's Jiju</span><em>+91 98999 84791</em></div>
+      </div>
+
+      <p class="closing">We are excited to celebrate with you.</p>
+    </div>
+  </section>
+</body>
+</html>
