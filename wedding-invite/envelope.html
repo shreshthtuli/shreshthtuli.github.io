@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreshth weds Disha — Envelope Print</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --maroon: #5a1626;
+      --display: "Marcellus", serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: "Mukta", system-ui, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* A5 page — change `size` to match your envelope (e.g. 162mm 229mm for C5) */
+    @page { size: A5; margin: 0; }
+
+    .page {
+      width: 148mm;
+      height: 210mm;
+      background: #ffffff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 92mm;
+      max-width: 80%;
+      height: auto;
+    }
+    .date {
+      margin-top: 8mm;
+      font-family: var(--display);
+      color: var(--maroon);
+      font-size: 18pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6mm;
+    }
+    .date::before, .date::after {
+      content: "";
+      width: 14mm;
+      height: 1px;
+      background: var(--maroon);
+      opacity: 0.6;
+    }
+
+    .toolbar { position: fixed; top: 12px; right: 12px; z-index: 50; }
+    .toolbar button {
+      font-family: "Mukta", sans-serif;
+      font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      font-size: 11px; padding: 10px 18px; border: none; border-radius: 4px;
+      background: var(--maroon); color: #e7cd86; cursor: pointer;
+      box-shadow: 0 6px 18px -8px rgba(0,0,0,0.5);
+    }
+    @media screen {
+      body { background: #d8d8d8; padding: 24px; display: flex; justify-content: center; }
+      .page { box-shadow: 0 12px 50px rgba(0,0,0,0.35); }
+    }
+    @media print {
+      .toolbar { display: none; }
+      body { background: none; padding: 0; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><button onclick="window.print()">Print / Save PDF</button></div>
+
+  <section class="page">
+    <img class="logo" src="assets/ganesha-calligraphy-maroon.png" alt="Shreshth weds Disha" />
+    <div class="date">2 &ndash; 6 July 2026</div>
+  </section>
+</body>
+</html>
