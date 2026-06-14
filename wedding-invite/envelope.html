@@ -6,11 +6,13 @@
   <title>Shreshth weds Disha — Envelope Print</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Marcellus&display=swap" rel="stylesheet" />
   <style>
     :root {
       --maroon: #5a1626;
+      --gold: #c9a23f;
       --display: "Marcellus", serif;
+      --serif: "Cormorant Garamond", Georgia, serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
@@ -19,46 +21,74 @@
       print-color-adjust: exact;
     }
 
-    /* A5 page — change `size` to match your envelope (e.g. 162mm 229mm for C5) */
-    @page { size: A5; margin: 0; }
+    /* A5 landscape — change `size` to match your envelope (e.g. 229mm 162mm for C5) */
+    @page { size: A5 landscape; margin: 0; }
 
     .page {
-      width: 148mm;
-      height: 210mm;
+      width: 210mm;
+      height: 148mm;
       background: #ffffff;
       position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* ----- Left: the design ----- */
+    .design {
+      flex: 0 0 44%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 12mm 8mm;
       text-align: center;
-      overflow: hidden;
+      border-right: 1px solid rgba(201, 162, 63, 0.5);
     }
-
     .logo {
-      width: 92mm;
-      max-width: 80%;
+      width: 78mm;
+      max-width: 100%;
       height: auto;
     }
     .date {
-      margin-top: 8mm;
+      margin-top: 6mm;
       font-family: var(--display);
       color: var(--maroon);
-      font-size: 18pt;
+      font-size: 14pt;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       display: flex;
       align-items: center;
-      gap: 6mm;
+      gap: 5mm;
     }
     .date::before, .date::after {
       content: "";
-      width: 14mm;
+      width: 10mm;
       height: 1px;
       background: var(--maroon);
-      opacity: 0.6;
+      opacity: 0.55;
     }
 
+    /* ----- Right: the address area ----- */
+    .address {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16mm 16mm 16mm 18mm;
+    }
+    .address__to {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--maroon);
+      font-size: 16pt;
+      margin-bottom: 9mm;
+    }
+    .address__line {
+      border-bottom: 1px solid rgba(90, 22, 38, 0.28);
+      height: 11mm;
+    }
+
+    /* Toolbar + screen preview */
     .toolbar { position: fixed; top: 12px; right: 12px; z-index: 50; }
     .toolbar button {
       font-family: "Mukta", sans-serif;
@@ -82,8 +112,17 @@
   <div class="toolbar"><button onclick="window.print()">Print / Save PDF</button></div>
 
   <section class="page">
-    <img class="logo" src="assets/ganesha-calligraphy-maroon.png" alt="Shreshth weds Disha" />
-    <div class="date">2 &ndash; 6 July 2026</div>
+    <div class="design">
+      <img class="logo" src="assets/ganesha-calligraphy-maroon.png" alt="Shreshth weds Disha" />
+      <div class="date">2 &ndash; 6 July 2026</div>
+    </div>
+    <div class="address">
+      <p class="address__to">To,</p>
+      <div class="address__line"></div>
+      <div class="address__line"></div>
+      <div class="address__line"></div>
+      <div class="address__line"></div>
+    </div>
   </section>
 </body>
 </html>
