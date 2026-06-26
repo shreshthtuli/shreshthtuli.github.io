@@ -1,20 +1,8 @@
-# OS generated files
+# Generated personalised hotel guest cards (PDFs)
+wedding-invite/hotel-cards/
+
+# Hotel card PDF generator script (kept local)
+wedding-invite/generate-hotel-cards.sh
+
+# macOS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Editor directories and files
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# Local development
-node_modules/
-.env
-.env.local

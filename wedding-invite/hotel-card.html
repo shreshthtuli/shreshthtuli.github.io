@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreshth weds Disha — Hotel Guest Card (A5)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Pinyon+Script&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --maroon: #5a1626;
+      --maroon-deep: #3d0e1a;
+      --gold: #c9a23f;
+      --gold-light: #e7cd86;
+      --ivory: #fbf6ec;
+      --ivory-2: #f3ead9;
+      --ink: #2b2118;
+      --muted: #7a6a55;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --display: "Marcellus", serif;
+      --script: "Pinyon Script", cursive;
+      --body: "Mukta", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: var(--body);
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ---- A5 pages ---- */
+    @page { size: A5; margin: 0; }
+
+    .page {
+      width: 148mm;
+      height: 210mm;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      background: var(--ivory);
+    }
+    .page:last-child { page-break-after: auto; break-after: auto; }
+
+    /* Ornamental gold frame */
+    .frame {
+      position: absolute;
+      inset: 7mm;
+      border: 1.4px solid var(--gold);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 1.6mm;
+      border: 0.6px solid rgba(201, 162, 63, 0.55);
+      border-radius: 1px;
+    }
+
+    .content {
+      position: absolute;
+      inset: 14mm;
+      display: flex;
+      flex-direction: column;
+    }
+    .content--center { justify-content: center; align-items: center; text-align: center; }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .ganesha-line {
+      font-size: 11pt;
+      color: var(--maroon);
+      letter-spacing: 0.04em;
+    }
+    .rule {
+      width: 34mm; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 4mm auto;
+    }
+    .rule--sm { width: 20mm; margin: 3mm auto; }
+    .flourish { color: var(--gold); font-size: 12pt; }
+
+    /* ---------- Page 1 — Welcome Letter ---------- */
+    .welcome__art {
+      width: 56mm;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 2mm;
+    }
+    .welcome__dear {
+      font-family: var(--display);
+      color: var(--maroon);
+      font-size: 16pt;
+      text-align: left;
+      align-self: flex-start;
+      margin-bottom: 3mm;
+    }
+    .welcome__dear span { font-style: italic; }
+    .welcome__body {
+      text-align: left;
+      color: var(--ink);
+      font-weight: 300;
+      font-size: 10.8pt;
+      line-height: 1.62;
+    }
+    .welcome__body p + p { margin-top: 2.6mm; }
+    .welcome__body .lead {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 12.5pt;
+      color: var(--maroon);
+      line-height: 1.45;
+    }
+    .welcome__sign {
+      margin-top: auto;
+      padding-top: 5mm;
+      padding-right: 4mm;
+      text-align: right;
+    }
+    .welcome__sign em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--muted);
+      font-size: 10.5pt;
+    }
+    .welcome__sign strong {
+      display: block;
+      font-family: var(--script);
+      font-weight: 400;
+      color: var(--maroon);
+      font-size: 18pt;
+      line-height: 1.15;
+      margin-top: 1mm;
+    }
+
+    /* ---------- Agenda pages ---------- */
+    .page-title {
+      font-family: var(--display);
+      color: var(--maroon);
+      font-weight: 400;
+      font-size: 18pt;
+      text-align: center;
+      margin-bottom: 1mm;
+    }
+
+    .dayblock + .dayblock { margin-top: 3.5mm; }
+    .dayblock__head { text-align: center; margin-bottom: 1.8mm; }
+    .day__date {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .day__title {
+      font-family: var(--display);
+      color: var(--maroon);
+      font-weight: 400;
+      font-size: 13.5pt;
+      line-height: 1.2;
+      margin-top: 0.5mm;
+    }
+    .day__title em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 10pt;
+      color: var(--muted);
+      margin-left: 2mm;
+    }
+    .day__venue {
+      font-size: 8.5pt;
+      color: var(--muted);
+      font-weight: 300;
+      font-style: italic;
+      margin-top: 0.5mm;
+    }
+
+    .evs { border-top: 0.6px solid var(--ivory-2); }
+    .ev {
+      display: flex;
+      gap: 4mm;
+      align-items: baseline;
+      padding: 1.4mm 0;
+      border-bottom: 0.6px solid var(--ivory-2);
+    }
+    .ev__time {
+      flex: 0 0 27mm;
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .ev__main { flex: 1; }
+    .ev__name {
+      display: inline;
+      font-weight: 600;
+      color: var(--maroon);
+      font-size: 10pt;
+    }
+    .ev__where {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 9pt;
+      margin-left: 2mm;
+    }
+    .ev__note {
+      display: block;
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 9pt;
+      line-height: 1.4;
+      margin-top: 0.3mm;
+    }
+
+    .closing {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--muted);
+      font-size: 10.5pt;
+      text-align: center;
+      margin-top: auto;
+      padding-top: 5mm;
+    }
+
+    /* ---------- Screen preview + toolbar ---------- */
+    .toolbar {
+      position: fixed;
+      top: 12px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(45,33,24,0.92);
+      padding: 9px 12px;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px -8px rgba(0,0,0,0.6);
+    }
+    .toolbar input {
+      font-family: var(--body);
+      font-size: 13px;
+      padding: 8px 12px;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      background: var(--ivory);
+      color: var(--ink);
+      min-width: 230px;
+    }
+    .toolbar button {
+      font-family: var(--body);
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      font-size: 11px;
+      padding: 9px 16px;
+      border: none;
+      border-radius: 4px;
+      background: var(--maroon);
+      color: var(--gold-light);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    @media screen {
+      body { background: #2c2c2c; padding: 76px 0 24px; }
+      .page { margin: 0 auto 22px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+    }
+    @media print {
+      .toolbar { display: none; }
+      body { background: none; padding: 0; }
+      .page { margin: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <input id="nameInput" type="text" placeholder="Guest name (e.g. Shikhar bhaiya)" autocomplete="off" />
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <!-- ===== Page 1 — Welcome Letter ===== -->
+  <section class="page">
+    <div class="frame"></div>
+    <div class="content">
+      <img class="welcome__art" src="assets/ganesha-calligraphy-maroon.png" alt="Shreshth weds Disha" />
+      <p class="ganesha-line" style="text-align:center">॥ श्री गणेशाय नमः ॥</p>
+      <div class="rule"></div>
+
+      <p class="welcome__dear">Dear <span id="guestName">Guest</span>,</p>
+
+      <div class="welcome__body">
+        <p class="lead">With hearts brimming with joy and gratitude, we warmly welcome you to the wedding celebrations of Shreshth &amp; Disha.</p>
+        <p>Your presence is the most precious blessing we could ask for. Thank you for travelling near and far, and for choosing to share these joyous days with our family. As our honoured guest at WelcomHotel by ITC Hotels, may your stay be wrapped in warmth, laughter and cherished memories.</p>
+        <p>Over the coming days, we shall come together in prayer, music, colour and celebration. We have lovingly put together this little guide so you never miss a single moment of the festivities.</p>
+        <p>From our family to yours — thank you for being a part of our happiness.</p>
+      </div>
+
+      <p class="welcome__sign">
+        <em>With love &amp; blessings,</em>
+        <strong>The Tuli Family</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Page 2 — Day One ===== -->
+  <section class="page">
+    <div class="frame"></div>
+    <div class="content">
+      <p class="kicker" style="text-align:center">Your days with us</p>
+      <h2 class="page-title">The Celebrations</h2>
+      <div class="rule rule--sm"></div>
+
+      <div class="dayblock">
+        <div class="dayblock__head">
+          <span class="day__date">Thursday &middot; 2 July 2026</span>
+          <div class="day__title">शुभारम्भ <em>Shubharambh</em></div>
+          <p class="day__venue">WelcomHotel by ITC Hotels, Dwarka</p>
+        </div>
+        <div class="evs">
+          <div class="ev">
+            <span class="ev__time">1:00 &ndash; 3:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Check-in &amp; Welcome</span><span class="ev__where">Hotel Lobby</span>
+              <span class="ev__note">Settle in to welcome drinks, with a fruit basket &amp; chocolates awaiting in your room</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">2:00 &ndash; 4:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Welcome Lunch</span><span class="ev__where">Shanghai Hall</span>
+              <span class="ev__note">A hearty Rajasthani spread &mdash; Dal Baati Churma, Bajra Roti &amp; Ghevar &mdash; with a live puppet show</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">7:30 &ndash; 8:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Tilak &amp; Pooja</span><span class="ev__where">Gateway 1&middot;2&middot;3</span>
+              <span class="ev__note">The couple enters as we invoke the divine blessings and begin the celebrations</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">8:30 &ndash; 9:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Chunni, Shagun &amp; Engagement</span><span class="ev__where">Gateway 1&middot;2&middot;3</span>
+              <span class="ev__note">The rings are exchanged to soft bhajans, followed by a family photoshoot</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">9:30 &ndash; 10:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Tappe &amp; Dhol</span><span class="ev__where">Gateway 1&middot;2&middot;3</span>
+              <span class="ev__note">An evening of dhol, tappe &amp; spirited Punjabi bhangra</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">10:00 &ndash; 11:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Dinner</span><span class="ev__where">Gateway 1&middot;2&middot;3</span>
+              <span class="ev__note">A lavish oriental spread accompanied by joyful family performances</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Page 3 — Day Two ===== -->
+  <section class="page">
+    <div class="frame"></div>
+    <div class="content">
+      <div class="dayblock">
+        <div class="dayblock__head">
+          <span class="day__date">Friday &middot; 3 July 2026</span>
+          <div class="day__title">शुभ विवाह <em>Shubh Vivah</em></div>
+          <p class="day__venue">WelcomHotel by ITC Hotels, Dwarka</p>
+        </div>
+        <div class="evs">
+          <div class="ev">
+            <span class="ev__time">9:00 &ndash; 11:00 AM</span>
+            <div class="ev__main">
+              <span class="ev__name">Lazy Breakfast Buffet</span><span class="ev__where">Del One</span>
+              <span class="ev__note">A leisurely buffet breakfast over plenty of gapshup</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">9:30 &ndash; 10:30 AM</span>
+            <div class="ev__main">
+              <span class="ev__name">Kul Devi Pooja &amp; Haldi</span><span class="ev__where">Dadi's Suite</span>
+              <span class="ev__note">Seeking the blessings of our family deity, followed by the auspicious haldi</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">2:00 &ndash; 4:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Lunch</span><span class="ev__where">Suryamahal</span>
+              <span class="ev__note">A South Indian feast of Bisi Bele Bath &amp; Appam; anniversary cake cutting at 2:15 PM</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">4:00 &ndash; 4:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Sehra Bandi &amp; Pagdi</span><span class="ev__where">Groom's Suite</span>
+              <span class="ev__note">The groom is adorned with the sehra to soft background music</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">4:30 &ndash; 5:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Baraat</span><span class="ev__where">Outside Hotel</span>
+              <span class="ev__note">The groom's joyous procession with umbrella band &amp; shehnai</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">5:00 &ndash; 5:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Milni</span><span class="ev__where">Suryamahal</span>
+              <span class="ev__note">The two families meet and are welcomed to the strains of the shehnai</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">5:30 &ndash; 6:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Jaimala</span><span class="ev__where">Suryamahal</span>
+              <span class="ev__note">The couple exchange garlands amid lively dance troupes</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">7:00 &ndash; 8:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Phere &amp; Kanyadaan</span><span class="ev__where">Suryamahal</span>
+              <span class="ev__note">The sacred vows taken around the holy fire</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">8:30 &ndash; 9:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Vidai to Dadi's Room</span><span class="ev__where">Suryamahal</span>
+              <span class="ev__note">A heartfelt farewell as the bride is welcomed into her new home</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">9:45 &ndash; 11:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Wedding Dinner &amp; Dance</span><span class="ev__where">Suryamahal</span>
+              <span class="ev__note">A grand dinner with the DJ as we dance the night away</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Page 4 — Days Three, Four & Five ===== -->
+  <section class="page">
+    <div class="frame"></div>
+    <div class="content">
+      <div class="dayblock">
+        <div class="dayblock__head">
+          <span class="day__date">Saturday &middot; 4 July 2026</span>
+          <div class="day__title">नवजीवन अभिनन्दन <em>Navjeevan Abhinandan</em></div>
+          <p class="day__venue">WelcomHotel by ITC Hotels, Dwarka</p>
+        </div>
+        <div class="evs">
+          <div class="ev">
+            <span class="ev__time">9:00 &ndash; 11:00 AM</span>
+            <div class="ev__main">
+              <span class="ev__name">Lazy Breakfast Buffet</span><span class="ev__where">Del One</span>
+              <span class="ev__note">A relaxed breakfast &amp; gapshup</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">12:00 &ndash; 2:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Pag Phera</span><span class="ev__where">Nangia Residence</span>
+              <span class="ev__note">A visit to the bride's family home</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">2:00 &ndash; 4:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Lunch</span><span class="ev__where">Del One</span>
+              <span class="ev__note">An à-la-carte lunch &amp; gapshup</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">8:30 &ndash; 9:15 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Wedding Reception</span><span class="ev__where">Gateway 1&middot;2&middot;3</span>
+              <span class="ev__note">Welcoming Mrs. Disha Tuli with continental fare &amp; a live band</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dayblock">
+        <div class="dayblock__head">
+          <span class="day__date">Sunday &middot; 5 July 2026</span>
+          <div class="day__title">विश्राम <em>A Restful Day</em></div>
+          <p class="day__venue">WelcomHotel by ITC Hotels, Dwarka</p>
+        </div>
+        <div class="evs">
+          <div class="ev">
+            <span class="ev__time">9:00 &ndash; 11:00 AM</span>
+            <div class="ev__main">
+              <span class="ev__name">Lazy Breakfast Buffet</span><span class="ev__where">Del One</span>
+              <span class="ev__note">A relaxed breakfast before farewells</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dayblock">
+        <div class="dayblock__head">
+          <span class="day__date">Monday &middot; 6 July 2026</span>
+          <div class="day__title">कर्मभूमि अभिनन्दन <em>Karmabhoomi Abhinandan</em></div>
+          <p class="day__venue">Coral Telecom, Noida</p>
+        </div>
+        <div class="evs">
+          <div class="ev">
+            <span class="ev__time">5:00 &ndash; 7:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Coral Product Tour</span><span class="ev__where">Coral Telecom</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">7:00 &ndash; 8:30 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Performances &amp; Cake Cutting</span><span class="ev__where">Coral Telecom</span>
+              <span class="ev__note">Lobby performances to celebrate the newlyweds</span>
+            </div>
+          </div>
+          <div class="ev">
+            <span class="ev__time">8:30 &ndash; 10:00 PM</span>
+            <div class="ev__main">
+              <span class="ev__name">Dinner &amp; Drinks with Live Dance</span><span class="ev__where">Coral Telecom</span>
+              <span class="ev__note">An evening with the DJ &amp; dhol</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="closing">We are blessed to have you with us. &#10086;</p>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var fromUrl = params.get('name');
+      var input = document.getElementById('nameInput');
+      var out = document.getElementById('guestName');
+      function update() {
+        var v = input.value.trim();
+        out.textContent = v || 'Guest';
+      }
+      if (fromUrl) { input.value = fromUrl; }
+      update();
+      input.addEventListener('input', update);
+    })();
+  </script>
+
+</body>
+</html>
